@@ -1,8 +1,11 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
+import { FaBeer } from "react-icons/fa";
 
-type Price = string | number;
+export type Price = string | number;
 
-interface IProduct {
+export interface IProduct {
   /** Name of a product
    */
   title: string;
@@ -27,6 +30,7 @@ function Product({
   return (
     <div>
       <div>
+        <FaBeer />
         {title} - {description} - {price}
       </div>
       <span>{isInStock ? "Get now" : "try again later"}</span>
@@ -46,6 +50,7 @@ function ProductSection() {
         const res = await fetch("/products");
         const data = await res.json();
         setProducts(data);
+        // NOTE: Because error can be any or unknown we need a hack to handle its type
       } catch (error) {
         if (error instanceof Error) {
           setError(error);
@@ -83,7 +88,7 @@ function ProductSection() {
 function NewProductForm() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [price, setPrice] = useState<number>(0);
+  const [price, setPrice] = useState(0);
 
   const handleSubmit = (event: React.SyntheticEvent) => {
     event.preventDefault();
@@ -116,7 +121,7 @@ function NewProductForm() {
         <input
           type="number"
           value={price.toString()}
-          onChange={(e) => setPrice(e.target.value)}
+          onChange={(e) => setPrice(Number(e.target.value))}
         />
       </label>
 
