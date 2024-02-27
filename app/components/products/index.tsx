@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { FaBeer } from "react-icons/fa";
+import styled from "styled-components";
 
 export type Price = string | number;
 
@@ -19,6 +20,15 @@ interface IProductsAPI {
   products: IProduct[];
 }
 
+interface ITitleProps {
+  isActive: boolean;
+}
+
+const Title = styled.h2<ITitleProps>`
+  background: ${(props) => (props.isActive ? "green" : "red")};
+  border: 2px solid grey;
+`;
+
 function Product({
   title,
   description,
@@ -31,7 +41,7 @@ function Product({
     <div>
       <div>
         <FaBeer />
-        {title} - {description} - {price}
+        <Title isActive={false}>{title}</Title> - {description} - {price}
       </div>
       <span>{isInStock ? "Get now" : "try again later"}</span>
       <div>{children}</div>
@@ -149,8 +159,6 @@ add(1, 3);
 function sayHi(message: string): void {
   alert("Hello world" + message);
 }
-
-sayHi("from Norway");
 
 // TODO: Create a function that accepts a number and a string and returns a string
 

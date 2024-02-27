@@ -17,7 +17,7 @@ function add(a: number, b: number): number {
 add(1, 3);
 
 function sayHi(message: string): void {
-  alert("Hello world" + message);
+  // alert("Hello world" + message);
 }
 
 // TODO: Create a function that accepts a number and a string and returns a string
