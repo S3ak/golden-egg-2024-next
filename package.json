@@ -8,12 +8,14 @@
     "start": "next start",
     "lint": "next lint",
     "test:e2e:run": "cypress run",
-    "test:e2e:open": "cypress open"
+    "test:e2e:open": "cypress open",
+    "test:e2e:ci": "npm start & wait-on http://localhost:3000"
   },
   "dependencies": {
     "next": "14.1.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "wait-on": "^7.2.0"
   },
   "devDependencies": {
     "@types/node": "^20",
