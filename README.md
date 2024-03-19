@@ -13,11 +13,11 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - [Deployment Dashboard](https://vercel.com/seak/golden-egg-2024-next)
 - [Last years website](https://golden-egg.vercel.app/)
 - [Last year code repo](github.com/Noroff-Fagskole/golden-egg)
-- [Analytics dashboard](#TODO:@Mo)
 - [Design Doc](https://seak.notion.site/FED-Golden-Egg-12-06-2024-Internal-56ab227ff2d84ae6b9e06b5ab95c7a75?pvs=74)
-- [Lo-Fi Design Spec]()
+- [Lo-Fi Design Spec](https://www.figma.com/file/NS5L4jFsYPSDN0JGKINeG9/Lo-fi-Design-Spec?type=design&node-id=0%3A1&mode=dev)
 - [Hi-Fi Design Spec](#TODO:@Emily)
 - [API URL](#TODO:@Mo)
+- [Analytics dashboard](#TODO:@Mo)
 
 ## Tech Stack
 
