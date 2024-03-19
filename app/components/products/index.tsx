@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { FaBeer } from "react-icons/fa";
 import styled from "styled-components";
+import * as UI from "./ui.styled";
 
 export type Price = string | number;
 
@@ -41,7 +42,9 @@ function Product({
     <div>
       <div>
         <FaBeer />
-        <Title isActive={false}>{title}</Title> - {description} - {price}
+        <UI.Title isActive={false}>{title}</UI.Title> -{" "}
+        <UI.Description>{description}</UI.Description> -{" "}
+        <UI.Price>{price}</UI.Price>
       </div>
       <span>{isInStock ? "Get now" : "try again later"}</span>
       <div>{children}</div>
