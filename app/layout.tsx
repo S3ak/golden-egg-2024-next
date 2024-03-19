@@ -16,7 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={"l-body " + inter.className}>
+        <header className="l-header">Golden Egg Awards 2024</header>
+        <main className="l-main">{children}</main>
+        <footer className="l-footer"> Copyright © Noroff Education AS </footer>
+      </body>
     </html>
   );
 }

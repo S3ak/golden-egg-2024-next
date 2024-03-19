@@ -16,18 +16,29 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.l-body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  height: 100vh;
+  width: 100%;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.l-header {
+  grid-area: header;
+  background-color: red;
+}
+
+.l-main {
+  grid-area: main;
+  background-color: green;
+  overflow-y: auto;
+}
+
+.l-footer {
+  grid-area: footer;
+  background-color: blue;
 }
