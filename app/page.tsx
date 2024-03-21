@@ -2,7 +2,7 @@ import { GoHomeFill } from "react-icons/go";
 import Hero from "./components/hero";
 import SnippetList from "./components/snippet-list";
 
-import { mockSubmissions } from "./lib/mocks/mock-submissions";
+import { mockSubmissions } from "@cypress/utils/factories";
 
 export default function Home() {
   return (

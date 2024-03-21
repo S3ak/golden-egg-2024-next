@@ -26,99 +26,15 @@ export const AttendeeSchema = z.object({
   user: UserSchema,
 });
 
+const PrgrammeSchema = z.object({
+  title: z.string(),
+  id: z.string().uuid(),
+  alias: z.string(),
+  description: z.string(),
+});
+
 // TODO: Find the real aliases for the programmes
-const ProgrammesSchema = z.array(
-  z.union([
-    z.object({
-      title: z.literal("Front-end Development"),
-      id: z.string().uuid(),
-      alias: z.literal("fed"),
-      description: z.literal(
-        "Digital Design and Graphics: This program focuses on graphic design, digital illustration, user interface (UI) design, and animation."
-      ),
-    }),
-    z.object({
-      title: z.literal("Digital Design and Graphics"),
-      id: z.string().uuid(),
-      alias: z.literal("fed"),
-      description: z.literal(
-        "Digital Design and Graphics: This program focuses on graphic design, digital illustration, user interface (UI) design, and animation."
-      ),
-    }),
-    z.object({
-      title: z.literal("3D Design and Animation"),
-      id: z.string().uuid(),
-      alias: z.literal("3da"),
-      description: z.literal(
-        "3D Design and Animation: Students in this program learn 3D modeling, animation, visual effects (VFX), and game design."
-      ),
-    }),
-    z.object({
-      title: z.literal("Game Design"),
-      id: z.string().uuid(),
-      alias: z.literal("gd"),
-      description: z.literal(
-        "Game Design: This discipline covers game development, game programming, game art, and game production."
-      ),
-    }),
-    z.object({
-      title: z.literal("Interactive Media"),
-      id: z.string().uuid(),
-      alias: z.literal("im"),
-      description: z.literal(
-        "Interactive Media: Students study interactive storytelling, user experience (UX) design, web development, and digital marketing."
-      ),
-    }),
-    z.object({
-      title: z.literal("Film and TV Production"),
-      id: z.string().uuid(),
-      alias: z.literal("ftv"),
-      description: z.literal(
-        "Film and TV Production: This program covers filmmaking, scriptwriting, cinematography, editing, and post-production."
-      ),
-    }),
-    z.object({
-      title: z.literal("Digital Marketing"),
-      id: z.string().uuid(),
-      alias: z.literal("dm"),
-      description: z.literal(
-        "Digital Marketing: Students learn about online marketing strategies, social media marketing, search engine optimization (SEO), and digital analytics."
-      ),
-    }),
-    z.object({
-      title: z.literal("Music Production"),
-      id: z.string().uuid(),
-      alias: z.literal("mp"),
-      description: z.literal(
-        "Music Production: This discipline focuses on music composition, audio engineering, sound design, and music business."
-      ),
-    }),
-    z.object({
-      title: z.literal("Animation"),
-      id: z.string().uuid(),
-      alias: z.literal("a"),
-      description: z.literal(
-        "Animation: Students study traditional and digital animation techniques, character animation, motion graphics, and storytelling."
-      ),
-    }),
-    z.object({
-      title: z.literal("Cybersecurity"),
-      id: z.string().uuid(),
-      alias: z.literal("cs"),
-      description: z.literal(
-        "Cybersecurity: This program covers network security, ethical hacking, digital forensics, and cybersecurity management."
-      ),
-    }),
-    z.object({
-      title: z.literal("Data Science"),
-      id: z.string().uuid(),
-      alias: z.literal("ds"),
-      description: z.literal(
-        "Data Science: Students learn about data analysis, machine learning, data visualization, and big data technologies."
-      ),
-    }),
-  ])
-);
+const ProgrammesSchema = z.array(PrgrammeSchema);
 
 const categoriesSchema = z.array(
   z.union([
@@ -193,30 +109,31 @@ export const EventSchema = z.object({
   attendees: z.array(AttendeeSchema),
 });
 
+export const NomineeSchema = z.object({
+  submissions: z.array(z.string()),
+  yearsWon: z.array(z.string()).optional(),
+  socialMediaLink: z.string().url(),
+  programme: z.string(),
+  cohortYear: z.array(z.string()).optional(),
+  name: z.string(),
+  userID: z.string(),
+});
+
 export const SubmissionSchema = z.object({
   id: z.string(),
   title: z.string(),
   description: z.string(),
   category: categoriesSchema,
-  programme: z.string(),
-  author: z.string(),
+  programme: PrgrammeSchema,
+  nominee: NomineeSchema,
   fileURL: z.string().url(),
   submittedBy: UserSchema,
   submittedAt: z.date(),
-  cohortYear: z.date(),
+  _cohortYear: z.date(),
   images: z.array(z.string()),
   public_link: z.string().url().optional(),
   event: EventSchema,
   likeCount: z.number(),
-});
-
-export const NomineeSchema = z.object({
-  submissions: z.string(),
-  yearsWon: z.array(z.string()).optional(),
-  socialMediaLink: z.string().url(),
-  programme: z.string(),
-  cohortYear: z.array(z.string()).optional(),
-  userID: z.string(),
 });
 
 export const TicketSchema = z.object({

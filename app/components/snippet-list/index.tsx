@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.css";
 
-import { submission } from "@/lib/types/global";
+import { Submission } from "@/lib/schema";
 
 import {
   Select,
@@ -15,7 +15,7 @@ import { PROGRAMMES, CATERGORIES, YEARS } from "@/lib/constants";
 import SnippetCard from "../snippet-card";
 
 interface SnippetListProps {
-  list: submission[];
+  list: Submission[];
   title?: string;
 }
 
@@ -72,16 +72,16 @@ export default function SnippetList({
           ({
             id,
             programme,
-            author,
+            nominee,
             title: submissionTitle,
             category,
-            cohortYear,
+            _cohortYear,
           }) => (
             <SnippetCard
               key={id}
               title={programme.title}
-              description={`@${author.name}`}
-              slotFooter={cohortYear.toDateString()}
+              description={`@${nominee.name}`}
+              slotFooter={_cohortYear.toDateString()}
             >
               <p>{title}</p>
               <p>{category}</p>

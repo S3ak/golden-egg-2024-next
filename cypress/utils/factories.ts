@@ -1,6 +1,6 @@
 import { GenerateMockOptions, generateMock } from "@anatine/zod-mock";
 import { faker } from "@faker-js/faker";
-import { UserSchema } from "@/lib/schema";
+import { SubmissionSchema, UserSchema, Submission } from "@/lib/schema";
 import { z } from "zod";
 
 const seed = 1;
@@ -12,6 +12,12 @@ export const currentUser = generateMock(UserSchema, {
     displayName: faker.person.fullName,
   },
 });
+
+export const mockSubmissions: Submission[] = [1, 2, 3, 4].map((idx) =>
+  generateMock(SubmissionSchema, {
+    seed: seed + idx,
+  })
+);
 
 /**
  * @author Dan Bahrami
