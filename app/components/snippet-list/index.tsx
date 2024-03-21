@@ -10,92 +10,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+
+import { PROGRAMMES, CATERGORIES, YEARS } from "@/lib/constants";
 import SnippetCard from "../snippet-card";
 
 interface SnippetListProps {
   list: submission[];
   title?: string;
 }
-
-const programmes = [
-  {
-    title: "Front-end Development",
-    id: 1,
-    alias: "fed",
-    description:
-      "Digital Design and Graphics: This program focuses on graphic design, digital illustration, user interface (UI) design, and animation.",
-  },
-  {
-    title: "Digital Design and Graphics",
-    id: 1,
-    alias: "fed",
-    description:
-      "Digital Design and Graphics: This program focuses on graphic design, digital illustration, user interface (UI) design, and animation.",
-  },
-  {
-    title: "3D Design and Animation",
-    id: 1,
-    alias: "fed",
-    description:
-      "3D Design and Animation: Students in this program learn 3D modeling, animation, visual effects (VFX), and game design.",
-  },
-  {
-    title: "Game Design",
-    id: 1,
-    alias: "fed",
-    description:
-      "Game Design: This discipline covers game development, game programming, game art, and game production.",
-  },
-  {
-    title: "Interactive Media",
-    id: 1,
-    alias: "fed",
-    description:
-      "Interactive Media: Students study interactive storytelling, user experience (UX) design, web development, and digital marketing.",
-  },
-  {
-    title: "Film and TV Production",
-    id: 1,
-    alias: "fed",
-    description:
-      "Film and TV Production: This program covers filmmaking, scriptwriting, cinematography, editing, and post-production.",
-  },
-  {
-    title: "Digital Marketing",
-    id: 1,
-    alias: "fed",
-    description:
-      "Digital Marketing: Students learn about online marketing strategies, social media marketing, search engine optimization (SEO), and digital analytics.",
-  },
-  {
-    title: "Music Production",
-    id: 1,
-    alias: "fed",
-    description:
-      "Music Production: This discipline focuses on music composition, audio engineering, sound design, and music business.",
-  },
-  {
-    title: "Animation",
-    id: 1,
-    alias: "fed",
-    description:
-      "Animation: Students study traditional and digital animation techniques, character animation, motion graphics, and storytelling.",
-  },
-  {
-    title: "Cybersecurity",
-    id: 1,
-    alias: "fed",
-    description:
-      "Cybersecurity: This program covers network security, ethical hacking, digital forensics, and cybersecurity management.",
-  },
-  {
-    title: "Data Science",
-    id: 1,
-    alias: "fed",
-    description:
-      "Data Science: Students learn about data analysis, machine learning, data visualization, and big data technologies.",
-  },
-];
 
 export default function SnippetList({
   list = [],
@@ -110,7 +32,7 @@ export default function SnippetList({
             <SelectValue placeholder="Programme" />
           </SelectTrigger>
           <SelectContent>
-            {programmes.map((programme) => (
+            {PROGRAMMES.map((programme) => (
               <SelectItem key={programme.title} value={programme.title}>
                 {programme.title}
               </SelectItem>
@@ -123,9 +45,9 @@ export default function SnippetList({
             <SelectValue placeholder="Year" />
           </SelectTrigger>
           <SelectContent>
-            {programmes.map((programme) => (
-              <SelectItem key={programme.title} value={programme.title}>
-                {programme.title}
+            {YEARS.map((year) => (
+              <SelectItem key={year} value={year}>
+                {year}
               </SelectItem>
             ))}
           </SelectContent>
@@ -136,9 +58,9 @@ export default function SnippetList({
             <SelectValue placeholder="Category" />
           </SelectTrigger>
           <SelectContent>
-            {programmes.map((programme) => (
-              <SelectItem key={programme.title} value={programme.title}>
-                {programme.title}
+            {CATERGORIES.map((catergory) => (
+              <SelectItem key={catergory} value={catergory}>
+                {catergory}
               </SelectItem>
             ))}
           </SelectContent>
