@@ -1,0 +1,112 @@
+{
+  "data": [
+    {
+      "hasTicket": "false",
+      "eventPreferences": ["vegan"],
+      "registrationStatus": {
+        "type": "regular",
+        "kind": "general",
+        "status": "confirmed",
+        "date": ""
+      },
+      "event": "EventTitle",
+      "user": "User name"
+    },
+    {
+      "hasTicket": "false",
+      "eventPreferences": ["vegan"],
+      "registrationStatus": {
+        "type": "regular",
+        "kind": "general",
+        "status": "confirmed",
+        "date": ""
+      },
+      "event": "EventTitle",
+      "user": "User name"
+    },
+    {
+      "hasTicket": "false",
+      "eventPreferences": ["vegan"],
+      "registrationStatus": {
+        "type": "regular",
+        "kind": "general",
+        "status": "confirmed",
+        "date": ""
+      },
+      "event": "EventTitle",
+      "user": "User name"
+    },
+    {
+      "hasTicket": "false",
+      "eventPreferences": ["vegan"],
+      "registrationStatus": {
+        "type": "regular",
+        "kind": "general",
+        "status": "confirmed",
+        "date": ""
+      },
+      "event": "EventTitle",
+      "user": "User name"
+    },
+    {
+      "hasTicket": "false",
+      "eventPreferences": ["vegan"],
+      "registrationStatus": {
+        "type": "regular",
+        "kind": "general",
+        "status": "confirmed",
+        "date": ""
+      },
+      "event": "EventTitle",
+      "user": "User name"
+    },
+    {
+      "hasTicket": "false",
+      "eventPreferences": ["vegan"],
+      "registrationStatus": {
+        "type": "regular",
+        "kind": "general",
+        "status": "confirmed",
+        "date": ""
+      },
+      "event": "EventTitle",
+      "user": "User name"
+    },
+    {
+      "hasTicket": "false",
+      "eventPreferences": ["vegan"],
+      "registrationStatus": {
+        "type": "regular",
+        "kind": "general",
+        "status": "confirmed",
+        "date": ""
+      },
+      "event": "EventTitle",
+      "user": "User name"
+    },
+    {
+      "hasTicket": "false",
+      "eventPreferences": ["vegan"],
+      "registrationStatus": {
+        "type": "regular",
+        "kind": "general",
+        "status": "confirmed",
+        "date": ""
+      },
+      "event": "EventTitle",
+      "user": "User name"
+    },
+    {
+      "hasTicket": "false",
+      "eventPreferences": ["vegan"],
+      "registrationStatus": {
+        "type": "regular",
+        "kind": "general",
+        "status": "confirmed",
+        "date": ""
+      },
+      "event": "EventTitle",
+      "user": "User name"
+    }
+  ]
+}
