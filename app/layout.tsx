@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import MainNav from "./components/main-nav";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={"l-body " + inter.className}>
-        <header className="l-header">Golden Egg Awards 2024</header>
+        <header className="l-header">
+          <MainNav />
+        </header>
         <main className="l-main">{children}</main>
         <footer className="l-footer"> Copyright © Noroff Education AS </footer>
       </body>
