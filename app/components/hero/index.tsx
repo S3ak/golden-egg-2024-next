@@ -1,6 +1,6 @@
 import React from "react";
 
-import AuroraBackground from "@/app/components/ui/aurora-background";
+import AuroraBackground from "@/components/ui/aurora-background";
 
 export default function Hero() {
   return (
