@@ -1,5 +1,8 @@
 import { GoHomeFill } from "react-icons/go";
 import Hero from "./components/hero";
+import SnippetList from "./components/snippet-list";
+
+import { mockSubmissions } from "./lib/mocks/mock-submissions";
 
 export default function Home() {
   return (
@@ -10,6 +13,7 @@ export default function Home() {
       <h1>Welcome to Golden Egg 2024</h1>
 
       <Hero />
+      <SnippetList title="Featured submissions" list={mockSubmissions} />
     </>
   );
 }
