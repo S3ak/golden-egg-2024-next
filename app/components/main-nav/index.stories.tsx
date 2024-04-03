@@ -3,11 +3,10 @@ import MainNav from "./index";
 
 const meta: Meta<typeof MainNav> = {
   component: MainNav,
+  render: () => <MainNav />,
 };
 
 export default meta;
 type Story = StoryObj<typeof MainNav>;
 
-export const Primary: Story = {
-  render: () => <MainNav />,
-};
+export const Default: Story = {};

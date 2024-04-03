@@ -21,7 +21,9 @@ export default function RootLayout({
         <header className="l-header">
           <MainNav />
         </header>
+
         <main className="l-main">{children}</main>
+
         <footer className="l-footer"> Copyright © Noroff Education AS </footer>
       </body>
     </html>
