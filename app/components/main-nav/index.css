@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.nav-list-container {
+  display: flex;
+  gap: 1rem;
+}

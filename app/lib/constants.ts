@@ -1,5 +1,24 @@
 import { Categories, Programme } from "./schema";
 
+type navLink = {
+  id: number;
+  label: string;
+  url: string;
+};
+
+export const NAV_LINKS: navLink[] = [
+  {
+    id: 1,
+    label: "Home",
+    url: "/",
+  },
+  {
+    id: 2,
+    label: "Nomimate",
+    url: "/submissions/new",
+  },
+];
+
 export const CATERGORIES: Categories = [
   "Digital Art",
   "Animation",
