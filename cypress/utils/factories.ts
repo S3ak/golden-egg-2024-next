@@ -16,6 +16,9 @@ export const currentUser = generateMock(UserSchema, {
 export const mockSubmissions: Submission[] = [1, 2, 3, 4].map((idx) =>
   generateMock(SubmissionSchema, {
     seed: seed + idx,
+    stringMap: {
+      id: faker.string.uuid,
+    },
   })
 );
 
@@ -30,3 +33,19 @@ export const dataFactory =
     ...generateMock(schema, options),
     ...overrides,
   });
+
+export const submissionsFactory = dataFactory(SubmissionSchema);
+
+export const dummySubmissions = [1, 2, 3, 4].map((idx) =>
+  submissionsFactory(
+    {},
+    {
+      seed: seed + idx,
+      stringMap: {
+        id: faker.string.uuid,
+        title: faker.word.noun,
+        description: () => faker.lorem.paragraph({ min: 1, max: 3 }),
+      },
+    }
+  )
+);
