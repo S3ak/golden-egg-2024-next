@@ -22,7 +22,7 @@ const config: StorybookConfig = {
   docs: {
     autodocs: "tag",
   },
-  // staticDirs: ["..\\public"],
+  staticDirs: ["../public"],
   webpackFinal: async (config) => {
     if (config.resolve) {
       config.resolve.plugins = [
