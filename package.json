@@ -11,6 +11,7 @@
     "test:e2e:open": "cypress open",
     "test:e2e:ci": "npm start & wait-on http://localhost:3000",
     "storybook": "storybook dev -p 6006",
+    "build-storybook-docs": "storybook build --docs",
     "build-storybook": "storybook build"
   },
   "dependencies": {

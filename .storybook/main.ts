@@ -13,7 +13,7 @@ const config: StorybookConfig = {
     "@storybook/addon-essentials",
     "@chromatic-com/storybook",
     "@storybook/addon-interactions",
-    "@storybook/addon-mdx-gfm"
+    "@storybook/addon-mdx-gfm",
   ],
   framework: {
     name: "@storybook/nextjs",
@@ -22,7 +22,7 @@ const config: StorybookConfig = {
   docs: {
     autodocs: "tag",
   },
-  staticDirs: ["..\\public"],
+  // staticDirs: ["..\\public"],
   webpackFinal: async (config) => {
     if (config.resolve) {
       config.resolve.plugins = [
