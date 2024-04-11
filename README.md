@@ -25,6 +25,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 - [Next.js](https://nextjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
+- [Vipps](https://developer.vippsmobilepay.com/docs/SDKs/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Framer Motion](https://www.framer.com/motion/)
 - [Storybook](https://storybook.js.org/)
@@ -32,7 +33,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - [Luxon](https://moment.github.io/luxon/#/)
 - [React Hook Form](https://react-hook-form.com/)
 - [Zod](https://zod.dev/)
-- [React Icons](https://react-icons.github.io/react-icons/)]
+- [React Icons](https://react-icons.github.io/react-icons/)
 - [Aceternity UI](https://ui.aceternity.com/)
 - [AutoAnimate](https://auto-animate.formkit.com/)
 - [Superbase](https://supabase.com/)
