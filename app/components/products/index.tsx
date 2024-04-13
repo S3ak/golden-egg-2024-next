@@ -138,20 +138,6 @@ function createProduct(title: string, price: Price): IProduct {
   };
 }
 
-createProduct("Product 1", 200);
-
-function add(a: number, b: number): number {
-  return a + b;
-}
-
-add(1, 3);
-
-function sayHi(message: string): void {
-  alert("Hello world" + message);
-}
-
-sayHi("from Norway");
-
 // TODO: Create a function that accepts a number and a string and returns a string
 
 export default Product;
