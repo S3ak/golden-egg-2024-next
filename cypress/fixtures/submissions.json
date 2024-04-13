@@ -1,0 +1,29 @@
+{
+  "data": [
+    {
+      "id": "Unique ID",
+      "title": "string",
+      "description": "string",
+      "category": "design",
+      "programme": "fed",
+      "author": "Monde Sineke",
+      "fileURL": "https://drive.google.com/file/d/1fjk2L3dGh5G4MGynkLUWGUAS0lNQqPOL/view?usp=sharing",
+      "submittedBy": "Perfect Mabaso",
+      "submittedAt": "2024-01-01 13:12:01+00",
+      "_cohortYear": "2024",
+      "images": {
+        "thumbnail": "https://images.unsplash.com/photo-1572467551143-a57f5de1f861?q=80&w=1973&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "otherImages": [
+          "https://images.unsplash.com/photo-1572467551143-a57f5de1f861?q=80&w=1973&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1572467551143-a57f5de1f861?q=80&w=1973&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ]
+      },
+      "public_link": "https://www.behance.net/thabisontuli",
+      "event": "Golden Egg Awards 2024 - Oslo",
+      "likeCount": 21
+    }
+  ],
+  "count": 1,
+  "total": 1,
+  "skip": 0
+}

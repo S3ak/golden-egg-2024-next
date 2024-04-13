@@ -18,7 +18,10 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./app/*"],
+      "@ui*": ["./app/components/ui/*"],
+      "@types*": ["./app/lib/schema.ts*"],
+      "@cypress*": ["./cypress*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

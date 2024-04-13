@@ -1,0 +1,13 @@
+{
+  "data": {
+    "id": "uniqueId1",
+    "email": "example@email.com",
+    "name": "John Doe",
+    "role": "student",
+    "age": 25,
+    "birthdate": "1996-07-12",
+    "languages": ["gb", "no"],
+    "images": ["http://example.com/image1.jpg"],
+    "sessionId": "sessionId123"
+  }
+}
