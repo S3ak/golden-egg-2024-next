@@ -48,9 +48,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Project leads
 
-- Monde Sineke: nkululeko.sineke@noroff.no - Technical lead
-- Bent Kjetil Laerum: bent.kjetil.laerum@noroff.no - Event lead
-- Emily Mellem: emily.mellem@noroff.no - Design Lead
+- Monde Sineke: <nkululeko.sineke@noroff.no> - Technical lead
+- Bent Kjetil Laerum: <bent.kjetil.laerum@noroff.no> - Event lead
+- Emily Mellem: <emily.mellem@noroff.no> - Design Lead
 
 ## Features
 
@@ -77,6 +77,19 @@ Production is the enviromewnt the end-user experience. This is the final product
 Staging is the enviroment where the team can test the latest features and bug fixes. This enviroment is hosted on Vercel.
 
 ## Getting Started
+
+<details>
+  <summary>Quick Start</summary>
+  
+- Checkout using VScode
+- press *F1* and type `git:clone`
+- Install packages
+- press *F1* and type `run task` and hit enter.
+- type `npm` and hit enter.
+- type `install` and hit enter.
+- press *F5*
+
+</details>
 
 1 Install all the dependencies:
 
