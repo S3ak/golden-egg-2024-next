@@ -17,7 +17,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - [Last year code repo](github.com/Noroff-Fagskole/golden-egg)
 - [Design Doc](https://seak.notion.site/FED-Golden-Egg-12-06-2024-Internal-56ab227ff2d84ae6b9e06b5ab95c7a75?pvs=74)
 - [Lo-Fi Design Spec](https://www.figma.com/file/NS5L4jFsYPSDN0JGKINeG9/Lo-fi-Design-Spec?type=design&node-id=0%3A1&mode=dev)
-- [Hi-Fi Design Spec](#TODO:@Emily)
+- [Hi-Fi Design Spec](https://www.figma.com/file/UkBJuKGaGr83zZxDcfKWAH/CA%3A-Usability-Testing-2?type=design&node-id=20%3A3&mode=design&t=ahSWKYXt5aSwOSuz-1)
 - [API URL](#TODO:@Mo)
 - [Analytics dashboard](#TODO:@Mo)
 
