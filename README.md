@@ -20,6 +20,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - [Hi-Fi Design Spec](https://www.figma.com/file/UkBJuKGaGr83zZxDcfKWAH/CA%3A-Usability-Testing-2?type=design&node-id=20%3A3&mode=design&t=ahSWKYXt5aSwOSuz-1)
 - [API URL](#TODO:@Mo)
 - [Analytics dashboard](#TODO:@Mo)
+- [Payment Service Docs (Billetto)](https://api.billetto.com/docs/organiser-api)
 
 ## Tech Stack
 
@@ -41,6 +42,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - [NextAuth.js](https://next-auth.js.org/)
 - [Prettier](https://prettier.io/) - An opinionated code formatter
 - [Eslint](https://eslint.org/) - Find and fix problems in your JavaScript code
+- [MS Teams Forms](https://forms.microsoft.com/)
 
 ## Resources
 
