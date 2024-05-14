@@ -35,9 +35,11 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# storybook
 *storybook.log
 storybook-static/sb-addons/
 storybook-static/sb-common-assets/
 storybook-static/sb-manager/
 storybook-static/sb-preview/
 storybook-static/static/
+/storybook-static/
