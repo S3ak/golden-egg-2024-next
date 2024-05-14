@@ -1,19 +1,13 @@
-import { GoHomeFill } from "react-icons/go";
-import Hero from "./components/hero";
-import SnippetList from "./components/snippet-list";
-
-import { mockSubmissions } from "@cypress/utils/factories";
+import CountDownTimer from "@/components/count-down-timer";
 
 export default function Home() {
   return (
     <>
-      <span>
-        <GoHomeFill data-cy="home-icon" />
-      </span>
-      <h1>Welcome to Golden Egg 2024</h1>
-
-      <Hero />
-      <SnippetList title="Featured submissions" list={mockSubmissions} />
+      <section>
+        <div className="container mx-auto">
+          <CountDownTimer endDateTime="2024, 06, 12, 10, 0, 0" locale="nb-NO" />
+        </div>
+      </section>
     </>
   );
 }
