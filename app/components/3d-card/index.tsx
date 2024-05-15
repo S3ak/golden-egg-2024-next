@@ -151,3 +151,5 @@ export const useMouseEnter = () => {
   }
   return context;
 };
+
+export default CardContainer;

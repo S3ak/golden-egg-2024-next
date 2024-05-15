@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Sparkles from "./index";
+import CTACard from "./index";
 
-const meta: Meta<typeof Sparkles> = {
-  component: Sparkles,
+const meta: Meta<typeof CTACard> = {
+  component: CTACard,
   tags: ["autodocs"],
   args: {},
-  render: (args) => <Sparkles {...args} />,
+  render: (args) => <CTACard {...args} />,
 };
 
 export default meta;
-type Story = StoryObj<typeof Sparkles>;
+type Story = StoryObj<typeof CTACard>;
 
 export const Default: Story = {};
