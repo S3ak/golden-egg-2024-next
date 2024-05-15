@@ -18,10 +18,12 @@ export const CardContainer = ({
   children,
   className,
   containerClassName,
+  perspective = "1000px",
 }: {
   children?: React.ReactNode;
   className?: string;
   containerClassName?: string;
+  perspective?: string;
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isMouseEntered, setIsMouseEntered] = useState(false);
@@ -50,7 +52,7 @@ export const CardContainer = ({
       <div
         className={cn("flex items-center justify-center", containerClassName)}
         style={{
-          perspective: "1000px",
+          perspective,
         }}
       >
         <div
@@ -59,7 +61,7 @@ export const CardContainer = ({
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           className={cn(
-            "flex items-center justify-center relative transition-all duration-200 ease-linear",
+            "flex items-center justify-center relative transition-all duration-200 ease-linear min-w-60 min-h-60",
             className
           )}
           style={{
@@ -83,7 +85,7 @@ export const CardBody = ({
   return (
     <div
       className={cn(
-        "h-[186px] w-96 [transform-style:preserve-3d]  [&>*]:[transform-style:preserve-3d]",
+        "w-10/12 [transform-style:preserve-3d]  [&>*]:[transform-style:preserve-3d]",
         className
       )}
     >

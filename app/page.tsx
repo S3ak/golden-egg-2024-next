@@ -55,7 +55,7 @@ export default function Home() {
           Tickets
         </CTACard>
 
-        <CTACard href="/nominate" imgSrc="/photos/image-16@3x.jpg">
+        <CTACard href="/submissions/new" imgSrc="/photos/image-16@3x.jpg">
           Nominate
         </CTACard>
       </section>

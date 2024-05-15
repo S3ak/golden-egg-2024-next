@@ -2,9 +2,11 @@
 "use client";
 
 import React, { useEffect, useState, useMemo } from "react";
+import { motion } from "framer-motion";
 
 import "./index.css";
 import { cn } from "@/lib/utils";
+import Counter from "../animated-counter";
 
 /**
  * Renders a countdown timer component.
@@ -82,9 +84,11 @@ export default function CountDownTimer({
   }, [event]);
 
   return (
-    <div
+    <motion.div
       className="flex flex-col gap-1 justify-center items-center bg-popover px-1 py-2 pt-3 min-w-[224px] w-8/12 max-w-[650px] text-popover-foreground h-max"
       data-testid="countDownTimer"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
     >
       <section className="flex flex-row items-center gap-2">
         {[
@@ -101,10 +105,10 @@ export default function CountDownTimer({
               <p
                 className={cn(
                   !lastItem ? "c-count-down-display-cell" : "",
-                  ":c-count-down-display-cell--last text-[2.5rem] tracking-[-0.08em] font-black font-spartan text-gray text-center inline-block relative"
+                  ":c-count-down-display-cell--last text-[2.5rem] tracking-[-0.08em] font-black font-spartan text-gray text-center inline-block relative min-w-14"
                 )}
               >
-                {time}
+                <Counter value={Number(time)} />
               </p>
               <small className="uppercase text-[0.625rem] tracking-[-0.08em] font-black font-spartan text-gray text-center inline-block">
                 {label}
@@ -117,7 +121,7 @@ export default function CountDownTimer({
       <p className="flex items-center justify-center w-full font-bold text-center capitalize text-m">
         {formattedDate}
       </p>
-    </div>
+    </motion.div>
   );
 }
 

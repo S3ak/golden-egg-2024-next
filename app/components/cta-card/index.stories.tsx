@@ -17,4 +17,10 @@ const meta: Meta<typeof CTACard> = {
 export default meta;
 type Story = StoryObj<typeof CTACard>;
 
-export const Default: Story = {};
+export const Default: Story = {
+  parameters: {
+    backgrounds: {
+      default: "dark",
+    },
+  },
+};

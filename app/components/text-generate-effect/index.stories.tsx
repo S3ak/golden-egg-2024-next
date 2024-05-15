@@ -4,7 +4,9 @@ import TextGenerateEffect from "./index";
 const meta: Meta<typeof TextGenerateEffect> = {
   component: TextGenerateEffect,
   tags: ["autodocs"],
-  args: {},
+  args: {
+    words: "Hello World",
+  },
   render: (args) => <TextGenerateEffect {...args} />,
 };
 

@@ -18,9 +18,9 @@ const Image: React.FC<ImageProps> = ({
   ...props
 }) => {
   return (
-    <figure className="flex justify-center align-middle items-center max-h-screen">
+    <div className="flex justify-center align-middle items-center max-h-screen">
       <NextImage {...props} alt={alt} />;
-    </figure>
+    </div>
   );
 };
 
