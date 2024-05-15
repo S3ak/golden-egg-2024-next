@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import MainNav from "./components/main-nav";
+import Header from "./components/header";
+import Link from "next/link";
+import { FiInstagram, FiFacebook, FiLinkedin, FiMail } from "react-icons/fi";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,16 +17,59 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const socialLinks = [
+    {
+      Icon: <FiInstagram />,
+      href: "https://www.instagram.com/",
+      label: "Instagram",
+    },
+    {
+      Icon: <FiFacebook />,
+      href: "https://www.instagram.com/",
+      label: "Facebook",
+    },
+    {
+      Icon: <FiLinkedin />,
+      href: "https://www.instagram.com/",
+      label: "LinkedIn",
+    },
+    {
+      Icon: <FiMail />,
+      href: "",
+      label: "Mail",
+    },
+  ];
+
   return (
     <html lang="en">
       <body className={"l-body " + inter.className}>
-        <header className="l-header">
-          <MainNav />
-        </header>
+        <section className="fixed top-0 z-50 w-full">
+          <Header />
+        </section>
 
         <main className="l-main">{children}</main>
 
-        <footer className="l-footer"> Copyright © Noroff Education AS </footer>
+        <footer className="flex gap-8 p-6 text-foreground l-footer">
+          <section
+            data-cy="social-links"
+            className="flex flex-wrap gap-5 pr-8 border-r border-white"
+          >
+            {socialLinks.map(({ Icon, href, label }) => (
+              <Link
+                key={label}
+                href={href}
+                className="w-[1.5rem] min-w-[24px] min-h-[24px] flex items-center justify-center"
+              >
+                {Icon}
+              </Link>
+            ))}
+          </section>
+
+          <article>
+            <p>Noroff Education AS Tordenskjoldsgate 4 4612 Kristiansand</p>
+            <p>+47 38 00 00 00</p>
+          </article>
+        </footer>
       </body>
     </html>
   );

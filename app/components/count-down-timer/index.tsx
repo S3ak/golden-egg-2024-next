@@ -4,6 +4,7 @@
 import React, { useEffect, useState, useMemo } from "react";
 
 import "./index.css";
+import { cn } from "@/lib/utils";
 
 /**
  * Renders a countdown timer component.
@@ -42,7 +43,8 @@ export default function CountDownTimer({
   const event = useMemo(() => {
     return new Date(
       ConvertedDateTimeFromString[0],
-      ConvertedDateTimeFromString[1],
+      /* Note: Month must be minus one */
+      ConvertedDateTimeFromString[1] - 1,
       ConvertedDateTimeFromString[2],
       ConvertedDateTimeFromString[3],
       ConvertedDateTimeFromString[4],
@@ -81,28 +83,38 @@ export default function CountDownTimer({
 
   return (
     <div
-      className="flex flex-col gap-3 justify-center items-center bg-popover px-[57px] py-[26px] max-w-[width: 550px] max-height-[155px] text-popover-foreground"
-      data-testId="countDownTimer"
+      className="flex flex-col gap-1 justify-center items-center bg-popover px-1 py-2 pt-3 min-w-[224px] w-8/12 max-w-[650px] text-popover-foreground h-max"
+      data-testid="countDownTimer"
     >
-      <section className="flex flex-row gap-[56px] items-center">
+      <section className="flex flex-row items-center gap-2">
         {[
-          { time: daysLeft, label: "Day(s)" },
-          { time: hoursLeft, label: "Hour(s)" },
-          { time: minutesLeft, label: "Minute(s)" },
-        ].map(({ label, time }) => (
-          <div
-            key={label}
-            className="c-count-down-display-cell flex flex-col items-center w-100/3  pr-[56px] relative font-[900]"
-          >
-            <span className="text-[65px]">{time}</span>
-            <small className="text-[30px] uppercase line-clamp-1 font-[700]">
-              {label}
-            </small>
-          </div>
-        ))}
+          { time: daysLeft, label: `Day${pural(days)}` },
+          { time: hoursLeft, label: `Hour${pural(hours)}` },
+          { time: minutesLeft, label: `Minute${pural(minutes)}` },
+        ].map(({ label, time }, idx) => {
+          const lastItem = idx === 2;
+          return (
+            <div
+              key={label}
+              className="flex flex-col items-center w-100/3 pr-2 relative font-[900]"
+            >
+              <p
+                className={cn(
+                  !lastItem ? "c-count-down-display-cell" : "",
+                  ":c-count-down-display-cell--last text-[2.5rem] tracking-[-0.08em] font-black font-spartan text-gray text-center inline-block relative"
+                )}
+              >
+                {time}
+              </p>
+              <small className="uppercase text-[0.625rem] tracking-[-0.08em] font-black font-spartan text-gray text-center inline-block">
+                {label}
+              </small>
+            </div>
+          );
+        })}
       </section>
 
-      <p className="flex text-center items-center justify-center w-full text-xl capitalize font-[700]">
+      <p className="flex items-center justify-center w-full font-bold text-center capitalize text-m">
         {formattedDate}
       </p>
     </div>
@@ -115,4 +127,12 @@ function convertToNumberList(dateString: string): number[] {
 
 function padString(value: number): string {
   return `${value.toString().padStart(2, "0")}`;
+}
+
+function pural(value: number): string {
+  if (value > 1) {
+    return "s";
+  }
+
+  return "";
 }

@@ -10,6 +10,10 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      spartan: "Spartan",
+      urbanist: "Urbanist",
+    },
     container: {
       center: true,
       padding: "2rem",
