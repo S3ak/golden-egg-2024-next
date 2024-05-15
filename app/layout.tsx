@@ -49,7 +49,7 @@ export default function RootLayout({
 
         <main className="l-main">{children}</main>
 
-        <footer className="flex gap-8 p-6 text-foreground l-footer">
+        <footer className="flex items-center justify-center gap-8 p-6 text-foreground l-footer">
           <section
             data-cy="social-links"
             className="flex flex-wrap gap-5 pr-8 border-r border-white"

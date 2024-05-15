@@ -26,11 +26,11 @@ export default function Home() {
           <TextGenerateEffect words="THE GOLDEN EGG 2024" />
         </h1>
 
-        <article className="flex flex-col items-center gap-4 p-8 text-left text-white m-a text-pretty max-w-96">
+        <article className="flex flex-col items-center gap-4 p-8 text-left text-white m-a text-pretty max-w-prose">
           <p className="c-text-body text-white text-base font-medium font-['Urbanist'] tracking-tight">
-            Join us at The Golden Egg, Noroff's annual talent showcase and
-            awards ceremony! It's your chance to shine and celebrate with fellow
-            students.
+            Join us at The Golden Egg, Noroff&apos;s annual talent showcase and
+            awards ceremony! It&apos;s your chance to shine and celebrate with
+            fellow students.
           </p>
 
           <p className="c-text-body text-white text-base font-medium font-['Urbanist'] tracking-tight">
@@ -40,7 +40,7 @@ export default function Home() {
 
           <p className="c-text-body text-white text-base font-['Urbanist'] tracking-tight">
             <strong>
-              Don't miss out - get your tickets{""}
+              Don&apos;t miss out - get your tickets{""}
               <button className="c-btn--ghost" data-cy="tickets-link">
                 Today
                 <span className="c-animate-icon">!</span>
