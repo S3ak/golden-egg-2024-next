@@ -8,7 +8,7 @@ import { HoverBorderGradient } from "@/components/hover-border-gradient";
 
 export function CTACard({
   href = "/",
-  target = "__blank",
+  target = "",
   imgSrc = "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   children,
 }: {
@@ -18,7 +18,7 @@ export function CTACard({
   imgSrc?: string;
 }) {
   return (
-    <CardContainer className="inter-var h-[186px]">
+    <CardContainer perspective="1000" className="inter-var h-[186px]">
       <CardBody className="relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1]">
         <CardItem translateZ="20" className="w-full h-full">
           <Image

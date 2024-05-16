@@ -19,6 +19,16 @@ interface IProductsAPI {
   products: IProduct[];
 }
 
+/**
+ * Renders a product component.
+ *
+ * @param {IProduct} props - The props for the product component.
+ * @param {string} props.title - The title of the product.
+ * @param {string} props.description - The description of the product.
+ * @param {number} props.price - The price of the product.
+ * @param {React.ReactNode} props.children - The children elements of the product component.
+ * @returns {React.ReactElement} The rendered product component.
+ */
 function Product({
   title,
   description,

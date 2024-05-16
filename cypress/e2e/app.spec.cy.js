@@ -22,4 +22,24 @@ describe("App", () => {
     cy.visit("/");
     cy.get('[data-cy="tickets-link"]').click();
   });
+
+  it("Can navigate to the nomination page", () => {
+    cy.visit("/");
+
+    cy.get('a[href*="/submissions/new"]').click();
+
+    cy.url().should("include", "/submissions/new");
+
+    cy.get("h1").contains("Nominate");
+  });
+
+  it("Can navigate to the tickets page", () => {
+    cy.visit("/");
+
+    cy.get('a[href*="/tickets"]').click();
+
+    cy.url().should("include", "/tickets");
+
+    cy.get("h1").contains("Tickets");
+  });
 });
