@@ -1,4 +1,4 @@
-# **Golden Egg 2024: Celebrating Student Talent**
+3# **Golden Egg 2024: Celebrating Student Talent**
 
 Welcome to the Golden Egg 2024, the prestigious awards ceremony where we celebrate the outstanding talent and creativity of Noroff students from across Norway. This annual event is the culmination of a year of hard work and dedication, showcasing the diverse range of skills and achievements within our community
 
@@ -11,15 +11,17 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - [Storybook | Deployment dashboard](https://vercel.com/monde-sinekes-projects/golden-egg-2024-design-library)
 - [Teams Comms Channel](https://teams.microsoft.com/l/team/19%3AHURwgYManPYaRIbUv2NhwN_FfpViUXbDLBPLI4WXq6E1%40thread.tacv2/conversations?groupId=07e86d50-1d64-47cf-b2ee-ad77868a3588&tenantId=849aef27-5aa9-4c40-a7ad-38cf10c2f3fb)
 - [Production deploy](https://golden-egg-2024.vercel.app/)
+- [Wordpress Production deploy](https://tge.noroffkarrieredag.no/)
 - [Staging deploy](http://staging-golden-egg-2024.vercel.app)
 - [Deployment Dashboard](https://vercel.com/seak/golden-egg-2024-next)
 - [Last years website](https://golden-egg.vercel.app/)
 - [Last year code repo](github.com/Noroff-Fagskole/golden-egg)
 - [Design Doc](https://seak.notion.site/FED-Golden-Egg-12-06-2024-Internal-56ab227ff2d84ae6b9e06b5ab95c7a75?pvs=74)
 - [Lo-Fi Design Spec](https://www.figma.com/file/NS5L4jFsYPSDN0JGKINeG9/Lo-fi-Design-Spec?type=design&node-id=0%3A1&mode=dev)
-- [Hi-Fi Design Spec](#TODO:@Emily)
+- [Hi-Fi Design Spec](https://www.figma.com/file/UkBJuKGaGr83zZxDcfKWAH/CA%3A-Usability-Testing-2?type=design&node-id=20%3A3&mode=design&t=ahSWKYXt5aSwOSuz-1)
 - [API URL](#TODO:@Mo)
 - [Analytics dashboard](#TODO:@Mo)
+- [Payment Service Docs (Billetto)](https://api.billetto.com/docs/organiser-api)
 
 ## Tech Stack
 
@@ -41,6 +43,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - [NextAuth.js](https://next-auth.js.org/)
 - [Prettier](https://prettier.io/) - An opinionated code formatter
 - [Eslint](https://eslint.org/) - Find and fix problems in your JavaScript code
+- [MS Teams Forms](https://forms.microsoft.com/)
 
 ## Resources
 

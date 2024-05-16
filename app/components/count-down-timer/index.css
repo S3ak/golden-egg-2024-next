@@ -1,0 +1,29 @@
+@keyframes blink {
+  50% {
+    opacity: 0;
+    transform: scaleY(0.78);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+.c-count-down-display-cell::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: hsl(var(--popover-foreground));
+  width: 1px;
+  height: 75%;
+  top: 2px;
+  right: -0.5rem;
+  margin: auto;
+  animation: blink 1s cubic-bezier(0.79, -0.14, 0.19, 1.09) 0s infinite;
+}
+
+.c-count-down-display-cell--last::after {
+  content: "";
+  display: none;
+}
