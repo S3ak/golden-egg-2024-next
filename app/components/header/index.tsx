@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { FiMenu } from "react-icons/fi";
 import { motion } from "framer-motion";
@@ -14,9 +15,12 @@ export default function Header() {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
     >
-      <div className="flex w-[150px] h-[72px] justify-center items-center shrink-0">
+      <Link
+        href="/"
+        className="flex w-[150px] h-[72px] justify-center items-center shrink-0"
+      >
         <Image src="/Logo-Golden-Egg.png" width={150} height={72} alt="Logo" />
-      </div>
+      </Link>
 
       <button
         data-cy="home-icon"

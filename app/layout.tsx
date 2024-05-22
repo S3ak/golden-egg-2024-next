@@ -50,16 +50,18 @@ export default function RootLayout({
   ];
 
   return (
-    <html lang="en" className={cn("l-body ", fonts[0], fonts[1])}>
-      <body className={cn("l-body")}>
+    <html lang="en" className={cn("l-body", fonts[0], fonts[1])}>
+      <body className="l-body">
         <div className="fixed z-0">{/* <BackgroundGradientAnimation /> */}</div>
 
         <section className="fixed top-0 z-50 w-full">
           <Header />
         </section>
 
-        <main className={cn("l-main", "relative z-10")}>
-          <AuroraBackground>{children}</AuroraBackground>
+        <main className="l-main">
+          <AuroraBackground>
+            <div className="relative z-20">{children}</div>
+          </AuroraBackground>
         </main>
 
         <footer className="relative z-10 flex flex-col items-center justify-center md:justify-start gap-8 p-6 md:p-12 text-foreground l-footer md:flex-wrap ">

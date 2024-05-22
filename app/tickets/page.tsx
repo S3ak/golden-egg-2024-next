@@ -2,32 +2,19 @@ import React from "react";
 
 import Link from "next/link";
 import TextGenerateEffect from "@/components/text-generate-effect";
-import { Button } from "@/components/ui/button";
+import { getAllLocations } from "@/lib/services/billetto";
 
-const CONTENT = [
-  {
-    id: 1,
-    label: "Oslo",
-    href: "/tickets/oslo",
-  },
-  {
-    id: 2,
-    label: "Bergen",
-    href: "/tickets/bergen",
-  },
-  {
-    id: 3,
-    label: "Kristiansand",
-    href: "/tickets/kristiansand",
-  },
-  {
-    id: 4,
-    label: "Stavanger",
-    href: "/tickets/stavanger",
-  },
-];
+import type { Metadata } from "next";
 
-export default function TicketPage() {
+export const metadata: Metadata = {
+  title: "Get tickets 🎟️ your city | Golde Egg 2024",
+  description:
+    "Select the city/ Campus you are attending the Golden Egg Awards 2024.",
+};
+
+export default async function TicketsPage() {
+  const data = await getData();
+
   return (
     <article className="pt-24">
       <section>
@@ -37,12 +24,24 @@ export default function TicketPage() {
       </section>
 
       <section className="flex flex-col gap-4 p-8 text-center">
-        {CONTENT.map(({ id, label, href }) => (
-          <Button key={id} className="bg-secondary">
-            <Link href={href}>{label}</Link>
-          </Button>
+        {data.map(({ name, id }) => (
+          <Link
+            key={id}
+            className="bg-secondary"
+            href={`/tickets/${trimName(name).toLocaleLowerCase()}`}
+          >
+            {trimName(name)}
+          </Link>
         ))}
       </section>
     </article>
   );
+}
+
+async function getData() {
+  return getAllLocations();
+}
+
+function trimName(name: string) {
+  return name.replace("The Golden Egg - ", "");
 }
