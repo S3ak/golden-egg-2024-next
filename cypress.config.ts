@@ -7,4 +7,8 @@ export default defineConfig({
       // implement node event listeners here
     },
   },
+  env: {
+    BILLETTO_ACCESS_KEY_SECRET: "",
+    BILLETTO_APP_ID: "",
+  },
 });

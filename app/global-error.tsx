@@ -1,26 +1,9 @@
-import type { Metadata } from "next";
-// https://nextjs.org/docs/pages/building-your-application/optimizing/fonts#google-fonts
-import { Urbanist, League_Spartan } from "next/font/google";
-import Header from "@/components/header";
+"use client";
+
 import Link from "next/link";
-import Image from "@/components/image";
-import { FiInstagram, FiFacebook, FiLinkedin, FiMail } from "react-icons/fi";
-
-import "./globals.css";
-import "animate.css";
-import AuroraBackground from "./components/ui/aurora-background";
+import Image from "next/image";
 import { Button } from "./components/ui/button";
-import { cn } from "./lib/utils";
-
-const urbanist = Urbanist({ subsets: ["latin"] });
-const spartan = League_Spartan({ subsets: ["latin"] });
-const fonts = [urbanist, spartan];
-
-export const metadata: Metadata = {
-  title: "Golden Egg Awards 2024 🥚",
-  description:
-    "Aquisition marketing website for the Golden Egg Awards 2024 showcasing the front-end web development community at Noroff Education.",
-};
+import { FiInstagram, FiFacebook, FiLinkedin, FiMail } from "react-icons/fi";
 
 const socialLinks = [
   {
@@ -45,22 +28,24 @@ const socialLinks = [
   },
 ];
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function GlobalError({
+  error,
+  reset,
+}: {
+  error: Error & { digest?: string };
+  reset: () => void;
+}) {
   return (
-    <html lang="en" className={cn("l-body", fonts[0], fonts[1])}>
+    <html lang="en" className={"l-body"}>
       <body className="l-body">
         <section className="fixed top-0 z-50 w-full">
-          <Header />
+          <h1>Something went wrong!</h1>
         </section>
 
         <main className="l-main">
-          <AuroraBackground>
-            <div className="relative z-20">{children}</div>
-          </AuroraBackground>
+          <div className="relative z-20">
+            <button onClick={() => reset()}>Try again</button>
+          </div>
         </main>
 
         <footer className="relative z-10 flex flex-col items-center justify-center md:justify-start gap-8 p-6 md:p-12 text-foreground l-footer md:flex-wrap ">

@@ -4,7 +4,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 /* --background: #1b1338;
     --foreground: #ffffff;
 
@@ -32,6 +31,11 @@
     --border: #ffffff;
     --input: #ffffff;
     --ring: #ffffff; */
+
+:root {
+  /* You can customize the animate delay time */
+  --animate-delay: 0.3s !important;
+}
 
 @layer base {
   :root {
