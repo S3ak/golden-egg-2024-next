@@ -3,6 +3,7 @@ import React from "react";
 import TextGenerateEffect from "@/components/text-generate-effect";
 import { getAllLocations, getEventByName } from "@/lib/services/billetto";
 import type { Metadata } from "next";
+import BillettoWidget from "@/components/billetto-widget";
 
 type Props = {
   params: { slug: string };
@@ -73,14 +74,7 @@ export default async function TicketPage({
           })}
         </p>
 
-        <billetto-widget
-          type="button"
-          event={id}
-          organization="billetto.no"
-          lang="no"
-          theme="dark"
-          color="#d100d1"
-        />
+        <BillettoWidget id={id} />
       </section>
     </article>
   );
