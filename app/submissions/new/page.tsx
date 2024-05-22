@@ -29,7 +29,7 @@ const CONTENT = [
 
 export default function CreateSubmissionPage() {
   return (
-    <article className="pt-24">
+    <article className="pt-24 relative z-10">
       <section>
         <h1 className="w-full p-8 text-center text-white text-[40px] font-black font-['Spartan']">
           <TextGenerateEffect words="Nominate" />
