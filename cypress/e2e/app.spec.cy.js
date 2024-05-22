@@ -18,11 +18,6 @@ describe("App", () => {
     cy.get('[data-cy="home-icon"]').should("be.visible");
   });
 
-  it.skip("Can navigate to the tickets page", () => {
-    cy.visit("/");
-    cy.get('[data-cy="tickets-link"]').click();
-  });
-
   it("Can navigate to the nomination page", () => {
     cy.visit("/");
 
@@ -42,13 +37,15 @@ describe("App", () => {
 
     cy.get("h1").contains("Tickets");
 
-    cy.get('a[href*="/tickets/oslo"]').click();
+    it("Can navigate to a single ticket page", () => {
+      cy.get('a[href*="/tickets/oslo"]').click();
 
-    cy.url().should("include", "/tickets/oslo");
-    cy.get("h1").contains("Tickets Oslo");
+      cy.url().should("include", "/tickets/oslo");
+      cy.get("h1").contains("Tickets Oslo");
 
-    cy.get("p").contains("The event starts at 18:30");
-    cy.get("p").contains("The event ends at 22:00");
-    cy.get("p").contains("12.6.2024");
+      cy.get("p").contains("The event starts at 18:30");
+      cy.get("p").contains("The event ends at 22:00");
+      cy.get("p").contains("12.6.2024");
+    });
   });
 });
