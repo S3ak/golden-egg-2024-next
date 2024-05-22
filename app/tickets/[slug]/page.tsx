@@ -3,8 +3,15 @@ import React, { Suspense } from "react";
 import TextGenerateEffect from "@/components/text-generate-effect";
 import { getAllLocations, getEventByName } from "@/lib/services/billetto";
 import type { Metadata } from "next";
-import BillettoWidget from "@/components/billetto-widget";
 import Link from "next/link";
+import dynamic from "next/dynamic";
+
+const BillettoWidget = dynamic(
+  () => import("../../components/billetto-widget"),
+  {
+    ssr: false,
+  }
+);
 
 type Props = {
   params: { slug: string };
