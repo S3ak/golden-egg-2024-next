@@ -5,15 +5,13 @@ import { getNavigatorLanguage } from "@/lib/utils";
 import Script from "next/script";
 
 export default function BillettoWidget({ id }: { id: string }) {
-  const locale = navigator ? getNavigatorLanguage() : "no";
-
   return (
     <>
       <billetto-widget
         type="button"
         event={id}
         organization="billetto.no"
-        lang={locale}
+        lang={getNavigatorLanguage()}
         theme="dark"
         color="#d100d1"
       />
