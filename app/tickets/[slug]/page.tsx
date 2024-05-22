@@ -43,7 +43,7 @@ export default async function TicketPage({
   return (
     <article className="pt-24">
       <section>
-        <h1 className="w-full p-8 text-center text-white text-[40px] font-black font-['Spartan']">
+        <h1 className="w-full p-8 text-center text-white text-[40px] font-black font-['Spartan'] capitalize">
           <TextGenerateEffect words={`tickets ${slug}`} />
         </h1>
       </section>

@@ -41,5 +41,12 @@ describe("App", () => {
     cy.url().should("include", "/tickets");
 
     cy.get("h1").contains("Tickets");
+
+    cy.get('a[href*="/tickets/oslo"]').click();
+
+    cy.url().should("include", "/tickets/oslo");
+    cy.get("h1").contains("Tickets Oslo");
+
+    cy.get("p").contains("The event starts at 18:30");
   });
 });
