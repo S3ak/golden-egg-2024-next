@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Print name
-        run: echo "Hello $BILLETTO_APP_ID"
+        run: echo "Hello ${{ env.BILLETTO_APP_ID }}"
       - name: Checkout
         uses: actions/checkout@v4
       # Install NPM dependencies, cache them correctly
