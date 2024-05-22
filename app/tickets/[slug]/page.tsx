@@ -1,10 +1,15 @@
-import React from "react";
+import React, { Suspense } from "react";
 
 import TextGenerateEffect from "@/components/text-generate-effect";
-import { getAllLocations, getEventByName } from "@/lib/services/billetto";
+import {
+  BilletoEvent,
+  getAllLocations,
+  OPTIONS,
+  BILLETO_BASE_URL,
+  LOCATIONS,
+} from "@/lib/services/billetto";
 import type { Metadata } from "next";
 import BillettoWidget from "@/components/billetto-widget";
-import { log } from "console";
 
 type Props = {
   params: { slug: string };
@@ -76,7 +81,9 @@ export default async function TicketPage({
           })}
         </p>
 
-        <BillettoWidget id={id} />
+        <Suspense fallback={<p>Loading ticket...</p>}>
+          <BillettoWidget id={id} />
+        </Suspense>
       </section>
     </article>
   );
@@ -89,9 +96,16 @@ export default async function TicketPage({
  * @tutorial https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating#fetching-data-on-the-server-with-fetch
  */
 async function getData(name: string) {
-  console.log(">>> Before fetching data anem is:", name);
-  const data = await getEventByName(name);
-  console.log(">>> data is:", data);
+  let data: BilletoEvent;
+
+  try {
+    const url = BILLETO_BASE_URL + LOCATIONS[name as keyof typeof LOCATIONS];
+
+    const res = await fetch(url, OPTIONS);
+    data = await res.json();
+  } catch (error) {
+    throw new Error("Failed to fetch data");
+  }
 
   return data;
 }

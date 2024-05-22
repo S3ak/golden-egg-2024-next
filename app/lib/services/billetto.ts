@@ -34,7 +34,7 @@ interface Plans {
   total: number;
 }
 
-const OPTIONS = {
+export const OPTIONS = {
   method: "GET",
   headers: {
     "Api-Keypair": `${process.env.BILLETTO_APP_ID}:${process.env.BILLETTO_ACCESS_KEY_SECRET}`,
@@ -43,12 +43,12 @@ const OPTIONS = {
   },
 };
 
-const BILLETO_BASE_URL = "https://billetto.dk/api/v3/organiser/events/";
+export const BILLETO_BASE_URL = "https://billetto.dk/api/v3/organiser/events/";
 
 /**
  * Locations object containing location IDs for different cities according to Billetto.
  */
-const LOCATIONS = {
+export const LOCATIONS = {
   oslo: "986962",
   kristiansand: "957609",
   bergen: "986958",
