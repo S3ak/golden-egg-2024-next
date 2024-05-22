@@ -49,7 +49,7 @@ export default function CreateSubmissionPage() {
       <section className="p-8">
         <h2>Delivery information:</h2>
 
-        <div className="border p-8">
+        <div className="border p-8 min-h-[80dvh]">
           <iframe
             width="100%"
             className="min-h-[80dvh]"
