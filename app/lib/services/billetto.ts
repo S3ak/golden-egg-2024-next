@@ -34,7 +34,7 @@ interface Plans {
   total: number;
 }
 
-export const OPTIONS = {
+const OPTIONS = {
   method: "GET",
   headers: {
     "Api-Keypair": `${process.env.BILLETTO_APP_ID}:${process.env.BILLETTO_ACCESS_KEY_SECRET}`,
@@ -43,12 +43,12 @@ export const OPTIONS = {
   },
 };
 
-export const BILLETO_BASE_URL = "https://billetto.dk/api/v3/organiser/events/";
+const BILLETO_BASE_URL = "https://billetto.dk/api/v3/organiser/events/";
 
 /**
  * Locations object containing location IDs for different cities according to Billetto.
  */
-export const LOCATIONS = {
+const LOCATIONS = {
   oslo: "986962",
   kristiansand: "957609",
   bergen: "986958",
@@ -77,6 +77,7 @@ export async function getAllLocations(): Promise<BilletoEvent[]> {
 
     const json = responses.map((response) => response.json());
     data = await Promise.all(json);
+    console.warn(data);
   } catch (errors) {
     throw new Error("Failed to fetch data");
   }

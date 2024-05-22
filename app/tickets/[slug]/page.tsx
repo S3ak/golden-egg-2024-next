@@ -1,13 +1,7 @@
 import React, { Suspense } from "react";
 
 import TextGenerateEffect from "@/components/text-generate-effect";
-import {
-  BilletoEvent,
-  getAllLocations,
-  OPTIONS,
-  BILLETO_BASE_URL,
-  LOCATIONS,
-} from "@/lib/services/billetto";
+import { getAllLocations, getEventByName } from "@/lib/services/billetto";
 import type { Metadata } from "next";
 import BillettoWidget from "@/components/billetto-widget";
 
@@ -44,7 +38,6 @@ export default async function TicketPage({
 }) {
   const { slug } = params;
   const { starts_at, id, location, ends_at } = await getData(slug);
-  console.log(">>> location is", location);
   const startDate = new Date(starts_at);
 
   return (
@@ -95,17 +88,9 @@ export default async function TicketPage({
  * @returns A Promise that resolves to the retrieved data.
  * @tutorial https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating#fetching-data-on-the-server-with-fetch
  */
+
 async function getData(name: string) {
-  let data: BilletoEvent;
-
-  try {
-    const url = BILLETO_BASE_URL + LOCATIONS[name as keyof typeof LOCATIONS];
-
-    const res = await fetch(url, OPTIONS);
-    data = await res.json();
-  } catch (error) {
-    throw new Error("Failed to fetch data");
-  }
+  const data = await getEventByName(name);
 
   return data;
 }

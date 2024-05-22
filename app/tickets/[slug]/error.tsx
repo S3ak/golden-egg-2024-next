@@ -20,6 +20,15 @@ export default function Error({
       <a href="https://billetto.no/e/the-golden-egg-oslo-billetter-986962">
         Oslo
       </a>
+      <a href="https://billetto.no/e/the-golden-egg-kristiansand-billetter-957609">
+        Kristiansand
+      </a>
+      <a href="https://billetto.no/e/the-golden-egg-bergen-billetter-986958">
+        Bergen
+      </a>
+      <a href="https://billetto.no/e/the-golden-egg-stavanger-billetter-990300">
+        Stavanger
+      </a>
     </div>
   );
 }
