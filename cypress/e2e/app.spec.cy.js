@@ -48,5 +48,7 @@ describe("App", () => {
     cy.get("h1").contains("Tickets Oslo");
 
     cy.get("p").contains("The event starts at 18:30");
+    cy.get("p").contains("The event ends at 22:00");
+    cy.get("p").contains("12.6.2024");
   });
 });

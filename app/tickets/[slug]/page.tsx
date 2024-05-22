@@ -4,6 +4,7 @@ import TextGenerateEffect from "@/components/text-generate-effect";
 import { getAllLocations, getEventByName } from "@/lib/services/billetto";
 import type { Metadata } from "next";
 import BillettoWidget from "@/components/billetto-widget";
+import { log } from "console";
 
 type Props = {
   params: { slug: string };
@@ -38,6 +39,7 @@ export default async function TicketPage({
 }) {
   const { slug } = params;
   const { starts_at, id, location, ends_at } = await getData(slug);
+  console.log(">>> location is", location);
   const startDate = new Date(starts_at);
 
   return (
@@ -87,7 +89,9 @@ export default async function TicketPage({
  * @tutorial https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating#fetching-data-on-the-server-with-fetch
  */
 async function getData(name: string) {
+  console.log(">>> Before fetching data anem is:", name);
   const data = await getEventByName(name);
+  console.log(">>> data is:", data);
 
   return data;
 }

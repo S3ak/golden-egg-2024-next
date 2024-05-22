@@ -45,6 +45,9 @@ const OPTIONS = {
 
 const BILLETO_BASE_URL = "https://billetto.dk/api/v3/organiser/events/";
 
+/**
+ * Locations object containing location IDs for different cities according to Billetto.
+ */
 const LOCATIONS = {
   oslo: "986962",
   kristiansand: "957609",
