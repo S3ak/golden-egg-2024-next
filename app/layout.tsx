@@ -7,6 +7,7 @@ import Image from "@/components/image";
 import { FiInstagram, FiFacebook, FiLinkedin, FiMail } from "react-icons/fi";
 
 import "./globals.css";
+import "animate.css";
 import AuroraBackground from "./components/ui/aurora-background";
 import { Button } from "./components/ui/button";
 import { cn } from "./lib/utils";

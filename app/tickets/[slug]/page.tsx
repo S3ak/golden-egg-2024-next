@@ -1,10 +1,15 @@
-import React, { Suspense } from "react";
+import React from "react";
 
 import TextGenerateEffect from "@/components/text-generate-effect";
 import { getAllLocations, getEventByName } from "@/lib/services/billetto";
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 
+/**
+ * A dynamic component that loads the Billetto widget.
+ * This component is used to render the Billetto widget asynchronously.
+ * We need to do this as the Billetto widget script breaks server side rendering.
+ */
 const BillettoWidget = dynamic(
   () => import("../../components/billetto-widget"),
   {
@@ -14,6 +19,7 @@ const BillettoWidget = dynamic(
         className="text-center bg-primary text-white flex justify-center items-center max-w-5xl mx-auto dark font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-400 border-brand-500 hover:border-brand-600 hover:bg-brand-600 text-brand-secondary-0 rounded-md px-4 py-2 text-sm"
         disabled
       >
+        {/* TODO: Add loading icon */}
         Loading...
       </button>
     ),
@@ -64,24 +70,27 @@ export default async function TicketPage({
       </section>
 
       <section className="flex flex-col gap-4 p-8 text-center">
-        <p>Time and Location:</p>
-
-        <p>{location}</p>
-        <p>
+        <p className="animate__animated animate__fadeIn animate__delay-4s">
+          Time and Location:
+        </p>
+        <p className="animate__animated animate__fadeIn animate__delay-3s">
+          {location}
+        </p>
+        <p className="animate__animated animate__fadeIn animate__delay-2s">
           The event starts at{" "}
           {startDate.toLocaleString("nb-NO", {
             hour: "numeric",
             minute: "numeric",
           })}
         </p>
-        <p>
+        <p className="animate__animated animate__fadeIn animate__delay-1s">
           The event ends at{" "}
           {new Date(ends_at).toLocaleString("nb-NO", {
             hour: "numeric",
             minute: "numeric",
           })}
         </p>
-        <p>
+        <p className="animate__animated animate__fadeInUp">
           {startDate.toLocaleString("nb-NO", {
             year: "numeric",
             month: "numeric",
@@ -89,7 +98,7 @@ export default async function TicketPage({
           })}
         </p>
 
-        <BillettoWidget id={id} />
+        <BillettoWidget id={id} href={public_url} />
       </section>
     </article>
   );
