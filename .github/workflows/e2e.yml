@@ -4,8 +4,13 @@ on: push
 
 jobs:
   cypress-run:
+    env:
+      CYPRESS_BILLETTO_ACCESS_KEY_SECRET: ${{secrets.BILLETTO_ACCESS_KEY_SECRET}}
+      CYPRESS_BILLETTO_APP_ID: ${{secrets.BILLETTO_APP_ID}}
     runs-on: ubuntu-22.04
     steps:
+      - name: Print name
+        run: echo "Hello $BILLETTO_APP_ID"
       - name: Checkout
         uses: actions/checkout@v4
       # Install NPM dependencies, cache them correctly
