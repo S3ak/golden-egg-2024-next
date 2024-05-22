@@ -77,7 +77,6 @@ export async function getAllLocations(): Promise<BilletoEvent[]> {
 
     const json = responses.map((response) => response.json());
     data = await Promise.all(json);
-    console.warn(data);
   } catch (errors) {
     throw new Error("Failed to fetch data");
   }

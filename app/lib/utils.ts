@@ -21,7 +21,7 @@ export function cn(...inputs: ClassValue[]) {
  * @tutorial https://developer.mozilla.org/en-US/docs/Web/API/NavigatorLanguage/languages
  */
 export const getNavigatorLanguage = () => {
-  if (navigator.languages && navigator.languages.length) {
+  if (navigator && navigator.languages && navigator.languages.length) {
     return navigator.languages[0];
   } else {
     return navigator.language || "no";
