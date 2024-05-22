@@ -15,6 +15,7 @@ export default function BillettoWidget({ id }: { id: string }) {
         theme="dark"
         color="#d100d1"
       />
+
       {/* NOTE: This dumbass script breaks server side rendering */}
       <Script src="https://billetto.no/widget.js" />
     </>

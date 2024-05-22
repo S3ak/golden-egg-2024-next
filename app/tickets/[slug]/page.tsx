@@ -3,13 +3,20 @@ import React, { Suspense } from "react";
 import TextGenerateEffect from "@/components/text-generate-effect";
 import { getAllLocations, getEventByName } from "@/lib/services/billetto";
 import type { Metadata } from "next";
-import Link from "next/link";
 import dynamic from "next/dynamic";
 
 const BillettoWidget = dynamic(
   () => import("../../components/billetto-widget"),
   {
     ssr: false,
+    loading: () => (
+      <button
+        className="text-center bg-primary text-white flex justify-center items-center max-w-5xl mx-auto dark font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-400 border-brand-500 hover:border-brand-600 hover:bg-brand-600 text-brand-secondary-0 rounded-md px-4 py-2 text-sm"
+        disabled
+      >
+        Loading...
+      </button>
+    ),
   }
 );
 
@@ -82,18 +89,7 @@ export default async function TicketPage({
           })}
         </p>
 
-        <Suspense
-          fallback={
-            <Link
-              href={public_url}
-              className="text-center p-2 bg-primary text-white"
-            >
-              Get Ticket
-            </Link>
-          }
-        >
-          <BillettoWidget id={id} />
-        </Suspense>
+        <BillettoWidget id={id} />
       </section>
     </article>
   );
