@@ -6,6 +6,7 @@ const meta: Meta<typeof BillettoWidget> = {
   tags: ["autodocs"],
   args: {
     id: "986962",
+    href: "https://golden-egg.vercel.app/",
   },
   render: (args) => <BillettoWidget {...args} />,
 };
