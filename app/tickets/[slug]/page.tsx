@@ -4,6 +4,7 @@ import TextGenerateEffect from "@/components/text-generate-effect";
 import { getAllLocations, getEventByName } from "@/lib/services/billetto";
 import type { Metadata } from "next";
 import BillettoWidget from "@/components/billetto-widget";
+import Link from "next/link";
 
 type Props = {
   params: { slug: string };
@@ -37,7 +38,7 @@ export default async function TicketPage({
   params: { slug: string };
 }) {
   const { slug } = params;
-  const { starts_at, id, location, ends_at } = await getData(slug);
+  const { starts_at, id, location, ends_at, public_url } = await getData(slug);
   const startDate = new Date(starts_at);
 
   return (
@@ -74,7 +75,16 @@ export default async function TicketPage({
           })}
         </p>
 
-        <Suspense fallback={<p>Loading ticket...</p>}>
+        <Suspense
+          fallback={
+            <Link
+              href={public_url}
+              className="text-center p-2 bg-primary text-white"
+            >
+              Get Ticket
+            </Link>
+          }
+        >
           <BillettoWidget id={id} />
         </Suspense>
       </section>
