@@ -37,6 +37,7 @@ export default async function TicketPage({
 }) {
   const { slug } = params;
   const { starts_at, id, location, ends_at } = await getData(slug);
+  const startDate = new Date(starts_at);
 
   return (
     <article className="pt-24">
@@ -52,7 +53,7 @@ export default async function TicketPage({
         <p>{location}</p>
         <p>
           The event starts at{" "}
-          {new Date(starts_at).toLocaleString("nb-NO", {
+          {startDate.toLocaleString("nb-NO", {
             hour: "numeric",
             minute: "numeric",
           })}
@@ -65,7 +66,7 @@ export default async function TicketPage({
           })}
         </p>
         <p>
-          {new Date(starts_at).toLocaleString("nb-NO", {
+          {startDate.toLocaleString("nb-NO", {
             year: "numeric",
             month: "numeric",
             day: "numeric",
