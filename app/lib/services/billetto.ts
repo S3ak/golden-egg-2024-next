@@ -22,12 +22,12 @@ export type BilletoEvent = {
   venue: null;
 };
 
-export interface Availability {
+interface Availability {
   available: number;
   status: string;
 }
 
-export interface Plans {
+interface Plans {
   data: any[];
   has_more: boolean;
   object: string;
@@ -45,19 +45,24 @@ const OPTIONS = {
 
 const BILLETO_BASE_URL = "https://billetto.dk/api/v3/organiser/events/";
 
+const LOCATIONS = {
+  oslo: "986962",
+  kristiansand: "957609",
+  bergen: "986958",
+  stavanger: "990300",
+};
+
+/**
+ * Retrieves all locations for the event from Billeto.
+ * @returns A promise that resolves to an array of BilletoEvent objects representing the locations.
+ * @throws If there is an error while fetching the data.
+ */
 export async function getAllLocations(): Promise<BilletoEvent[]> {
   let data = [];
   try {
-    const urls = [
-      // Oslo
-      BILLETO_BASE_URL + "986962",
-      // Kristiansand
-      BILLETO_BASE_URL + "957609",
-      // Bergen
-      BILLETO_BASE_URL + "986958",
-      // Stavanger
-      BILLETO_BASE_URL + "990300",
-    ];
+    const urls = Object.values(LOCATIONS).map(
+      (location) => BILLETO_BASE_URL + location
+    );
 
     const requests = urls.map((url) => fetch(url, OPTIONS));
     const responses = await Promise.all(requests);
@@ -72,20 +77,17 @@ export async function getAllLocations(): Promise<BilletoEvent[]> {
   } catch (errors) {
     throw new Error("Failed to fetch data");
   }
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
 
   return data;
 }
 
+/**
+ * Retrieves an event from Billeto API by its name.
+ * @param name - The name of the event.
+ * @returns A Promise that resolves to the BilletoEvent object representing the event.
+ * @throws An error if the data fetching fails.
+ */
 export async function getEventByName(name: string): Promise<BilletoEvent> {
-  const LOCATIONS = {
-    oslo: "986962",
-    kristiansand: "957609",
-    bergen: "986958",
-    stavanger: "990300",
-  };
-
   let data: BilletoEvent;
 
   try {

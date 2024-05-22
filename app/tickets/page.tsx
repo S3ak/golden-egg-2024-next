@@ -38,8 +38,13 @@ export default async function TicketsPage() {
   );
 }
 
+/**
+ * Retrieves data from the server by calling the getAllLocations function.
+ * @returns {Promise<any>} A promise that resolves to the retrieved data.
+ */
 async function getData() {
-  return getAllLocations();
+  const data = await getAllLocations();
+  return data;
 }
 
 function trimName(name: string) {
