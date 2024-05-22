@@ -7,10 +7,10 @@ jobs:
     env:
       CYPRESS_BILLETTO_ACCESS_KEY_SECRET: ${{vars.BILLETTO_ACCESS_KEY_SECRET}}
       CYPRESS_BILLETTO_APP_ID: ${{vars.BILLETTO_APP_ID}}
+      BILLETTO_ACCESS_KEY_SECRET: ${{vars.BILLETTO_ACCESS_KEY_SECRET}}
+      BILLETTO_APP_ID: ${{vars.BILLETTO_APP_ID}}
     runs-on: ubuntu-22.04
     steps:
-      - name: Print name
-        run: echo "Hello ${{ vars.BILLETTO_APP_ID }} ${{ vars.BILLETTO_ACCESS_KEY_SECRET }}"
       - name: Checkout
         uses: actions/checkout@v4
       # Install NPM dependencies, cache them correctly
