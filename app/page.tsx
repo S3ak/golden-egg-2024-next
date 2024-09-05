@@ -10,7 +10,7 @@ export default function Home() {
       <span>
         <GoHomeFill data-cy="home-icon" />
       </span>
-      <h1>Welcome to Golden Egg 2024</h1>
+      <h1>Welcome to Golden Egg 2025</h1>
 
       <Hero />
       <SnippetList title="Featured submissions" list={mockSubmissions} />
