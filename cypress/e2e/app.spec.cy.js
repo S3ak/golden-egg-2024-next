@@ -6,11 +6,46 @@ const ENV_URL = Cypress.env("BASE_API_URL") || "http://localhost:3000/api";
 describe("App", () => {
   it("Renders home page", () => {
     cy.visit("/");
-    cy.get("h1").should("contain", "Welcome to Golden Egg 2024");
+    cy.get("h1").should("contain", "THE GOLDEN EGG 2024");
+    cy.get("p").should(
+      "contain",
+      "Join us at The Golden Egg, Noroff's annual talent showcase and awards ceremony! It's your chance to shine and celebrate with fellow students."
+    );
   });
 
-  it("Renders an icon", () => {
+  it("Renders an menu icon", () => {
     cy.visit("/");
     cy.get('[data-cy="home-icon"]').should("be.visible");
+  });
+
+  it("Can navigate to the nomination page", () => {
+    cy.visit("/");
+
+    cy.get('a[href*="/submissions/new"]').click();
+
+    cy.url().should("include", "/submissions/new");
+
+    cy.get("h1").contains("Nominate");
+  });
+
+  it("Can navigate to the tickets page", () => {
+    cy.visit("/");
+
+    cy.get('a[href*="/tickets"]').click();
+
+    cy.url().should("include", "/tickets");
+
+    cy.get("h1").contains("Tickets");
+
+    it("Can navigate to a single ticket page", () => {
+      cy.get('a[href*="/tickets/oslo"]').click();
+
+      cy.url().should("include", "/tickets/oslo");
+      cy.get("h1").contains("Tickets Oslo");
+
+      cy.get("p").contains("The event starts at 18:30");
+      cy.get("p").contains("The event ends at 22:00");
+      cy.get("p").contains("12.6.2024");
+    });
   });
 });
