@@ -29,7 +29,7 @@ const CONTENT = [
 
 export default function CreateSubmissionPage() {
   return (
-    <article className="pt-24">
+    <article className="pt-24 relative z-10">
       <section>
         <h1 className="w-full p-8 text-center text-white text-[40px] font-black font-['Spartan']">
           <TextGenerateEffect words="Nominate" />
@@ -49,11 +49,11 @@ export default function CreateSubmissionPage() {
       <section className="p-8">
         <h2>Delivery information:</h2>
 
-        <div className="border">
+        <div className="border p-8 min-h-[80dvh]">
           <iframe
             width="100%"
-            height="80vh"
-            src="https://forms.office.com/pages/responsepage.aspx?id=J--ahKlaQEynrTjPEMLz--lyFAXw42RHglfboJTp4B9UOUlPN0JMQVZVS1k3NjBCTlBUS09FSlIxTi4u"
+            className="min-h-[80dvh]"
+            src="https://forms.office.com/Pages/ResponsePage.aspx?id=J--ahKlaQEynrTjPEMLz--lyFAXw42RHglfboJTp4B9UOUlPN0JMQVZVS1k3NjBCTlBUS09FSlIxTi4u&embed=true"
           />
         </div>
       </section>

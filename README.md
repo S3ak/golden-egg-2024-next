@@ -10,6 +10,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - [Storybook | Component Library via github pages](https://s3ak.github.io/golden-egg-2024-next/)
 - [Storybook | Deployment dashboard](https://vercel.com/monde-sinekes-projects/golden-egg-2024-design-library)
 - [Teams Comms Channel](https://teams.microsoft.com/l/team/19%3AHURwgYManPYaRIbUv2NhwN_FfpViUXbDLBPLI4WXq6E1%40thread.tacv2/conversations?groupId=07e86d50-1d64-47cf-b2ee-ad77868a3588&tenantId=849aef27-5aa9-4c40-a7ad-38cf10c2f3fb)
+- [Current Website](https://tge.noroffkarrieredag.no)
 - [Production deploy](https://golden-egg-2024.vercel.app/)
 - [Wordpress Production deploy](https://tge.noroffkarrieredag.no/)
 - [Staging deploy](http://staging-golden-egg-2024.vercel.app)
@@ -54,6 +55,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - Monde Sineke: <nkululeko.sineke@noroff.no> - Technical lead
 - Bent Kjetil Laerum: <bent.kjetil.laerum@noroff.no> - Event lead
 - Emily Mellem: <emily.mellem@noroff.no> - Design Lead
+
+6 June Deadline.
 
 ## Features
 
