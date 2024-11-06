@@ -18,7 +18,6 @@ export default function Home() {
             particleColor="#edc7e9"
           />
         </div>
-        <CountDownTimer endDateTime="2024, 06, 12, 10, 0, 0" locale="nb-NO" />
       </section>
 
       <section className="flex flex-col items-center w-full">
