@@ -61,6 +61,7 @@ const LOCATIONS = {
  * @throws If there is an error while fetching the data.
  */
 export async function getAllLocations(): Promise<BilletoEvent[]> {
+  return [];
   let data = [];
   try {
     const urls = Object.values(LOCATIONS).map(
